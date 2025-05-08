@@ -1,0 +1,20 @@
+{
+  "short_name": "Adam Portfolio",
+  "name": "Create React App Sample",
+  "icons": [
+    {
+      "src": "pittsburghDay",
+      "sizes": "1600x1000",
+      "type": "image"
+    },
+    {
+      "src": "pittsburghNight",
+      "sizes": "1600x1000",
+      "type": "image"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
