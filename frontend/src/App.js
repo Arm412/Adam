@@ -6,17 +6,22 @@ function App() {
 
   return (
     <div className="App">
-      <div className="television">
-        <div className='game-screen'>
+      <div className="container">
+        <div className="desk">
+          <div className="game-screen">
             <img
-              src={isDay ? 'PittsburghDayAnimation.gif' : 'pittsburghNight.png'} />
-          <button className='toggle' onClick={() => setIsDay(!isDay)}>
-            Toggle Background
-          </button>
+              src={isDay ? 'PittsburghDayAnimation.gif' : 'pittsburghNight.png'}
+              alt="Game screen"
+            />
+            <button className="toggle" onClick={() => setIsDay(!isDay)}>
+              Toggle Background
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 
 export default App;
