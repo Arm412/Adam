@@ -1,17 +1,19 @@
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+  width: 100vw;
+  background-color: black;
 }
 
 .container {
   width: 100vw;
+  height: 100vh;
   max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: inherit;
 }
 
 .desk {
@@ -26,19 +28,19 @@
 
 .game-screen {
   position: absolute;
-  top: 29.25%;
-  left: 25%;
-  width: 50%;
-  height: 41.5%;
+  width: 46.25%;
+  top: 23.9%;
+  left: 18.5%;
   z-index: 2;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  display: inline-block; /* allows it to size to its content */
 }
 
 .game-screen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block; /* prevents whitespace below image */
 }
 
 .toggle {
@@ -52,4 +54,32 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 0.9rem;
+}
+
+.fade-out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;        /* Match full width of parent */
+  height: 100%;       /* Match full height of parent */
+  pointer-events: none;          /* Allows clicks to pass through if needed */
+  animation: fadeOut 3s ease-in forwards;
+  z-index: 10;        /* Ensure it's above other elements */
+  background-color: black;
+}
+
+.welcome {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  z-index: 5;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }

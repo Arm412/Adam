@@ -6,8 +6,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className='fade-out'></div>
       <div className="container">
         <div className="desk">
+          <h1 className="welcome">Welcome!</h1>
           <div className="game-screen">
             <img
               src={isDay ? 'PittsburghDayAnimation.gif' : 'pittsburghNight.png'}
@@ -22,6 +24,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
