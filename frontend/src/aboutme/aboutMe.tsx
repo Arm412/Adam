@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import './App.css';
+import './aboutMe.scss';
 
-function App() {
+const AboutMe: React.FC = () => {
   const [isDay, setIsDay] = useState(true);
 
   return (
-    <div className="App">
+    <div className="landing-container">
       <div className='fade-out'></div>
-      <div className="container">
+      <div className="scene">
         <div className="desk">
-          <h1 className="welcome">Welcome!</h1>
-          <div className="game-screen">
+          <div className="monitor-screen">
             <img
               src={isDay ? 'PittsburghDayAnimation.gif' : 'pittsburghNight.png'}
               alt="Game screen"
@@ -19,10 +18,17 @@ function App() {
               Toggle Background
             </button>
           </div>
+          <div className='white-board'>
+            <h2 className='header'>Welcome to my page!</h2>
+            <div>
+              <button className='option'>About me</button>
+              <button className='option'>Portfolio</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default AboutMe;
