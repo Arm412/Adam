@@ -21,16 +21,25 @@ const Landing: React.FC = () => {
     <div className="landing-container">
       <div className="fade-out"></div>
       <div className="scene">
-        <div className="desk">
+        <div className="room">
           <div className='side-menu' id="sideMenu">
             <button className="close-button" onClick={() => setShowMenu(false)}>
               <span className="close-line line1"></span>
               <span className="close-line line2"></span>
             </button>
             <div className="side-menu-content">
-              <h1 className="title">Adam Mitro</h1>
-              <p className="description">Full Stack Developer</p>
-              <p className="description">Pittsburgh, PA</p>
+              <button className="menu-option" onClick={() => window.location.href = '/aboutme'}>
+                <h4>About Me</h4>
+              </button>
+              <button className="menu-option" onClick={() => window.location.href = '/aboutme'}>
+                <h4>Work Experience</h4>
+              </button>
+              <button className="menu-option" onClick={() => window.location.href = '/aboutme'}>
+                <h4>Projects</h4>
+              </button>
+              <button className="menu-option" onClick={() => window.location.href = '/aboutme'}>
+                <h4>Contact Me</h4>
+              </button>
             </div>
           </div>
           <div className="nav-section">

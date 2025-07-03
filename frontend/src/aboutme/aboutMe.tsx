@@ -6,7 +6,7 @@ const AboutMe: React.FC = () => {
 
   return (
     <div className="about-me-container">
-      
+      <h1 className="about-me-title">About Me</h1>
     </div>
   );
 }
