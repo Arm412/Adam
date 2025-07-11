@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from './landing/landing';
 import './App.css';
-import AboutMe from './aboutme/aboutMe';
+import AboutMe from './aboutme/AboutMe';
 
 function App() {
   const [isDay, setIsDay] = useState(true);

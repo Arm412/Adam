@@ -44,10 +44,10 @@ const Landing: React.FC = () => {
           </div>
           <div className="nav-section">
             <button className="nav-button" id='linkedIn' onClick={() => window.open('https://www.linkedin.com/in/adam-mitro-3b1a6a142/', '_blank')}>
-              <img src="linkedin.png" alt="LinkedIn" />
+              <img src="/icons/linkedin.png" alt="LinkedIn" />
             </button>
             <button className="nav-button" id='github' onClick={() => window.open('https://www.github.com/Arm412', '_blank')}>
-              <img src="github.png" alt="github" />
+              <img src="/icons/github.png" alt="github" />
             </button>
             <div className="menu-button-container" onClick={() => setShowMenu(true)}>
               <div className="bar1"></div>
@@ -64,8 +64,8 @@ const Landing: React.FC = () => {
           <div className="white-board">
             <h4 className="header">Hi! Welcome to my page!</h4>
             <div>
-              <button className="option">About me</button>
-              <button className="option">Portfolio</button>
+              <button className="option" onClick={() => window.location.href = '/aboutme'}>About me</button>
+              <button className="option" onClick={() => window.location.href = '/aboutme'}>Contact Me</button>
             </div>
           </div>
         </div>
