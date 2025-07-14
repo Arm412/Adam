@@ -13,6 +13,8 @@ export enum IconsHelper {
     CSS3 = "/icons/css3-96.png",
     SQLite = "/icons/sqlite-96.png",
     Cpp = "/icons/cplusplus-96.png",
+    Cucumber = "icons/cucumber.png",
+    Yocto = "/icons/yocto.png"
 }
 
 // Icons by Icons8 — https://icons8.com
