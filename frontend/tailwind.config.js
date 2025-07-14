@@ -7,10 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#6366f1',
-        secondary: 'oklch(64.5% 0.246 16.439)',
-        cardBg: 'rgba(0,0,0,0.5)',
-        textMain: '#ffffff',
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        cardBg: 'var(--color-cardBg)',
+        textMain: 'var(--color-textMain)',
       },
       fontFamily: {
         mono: ['"JetBrains Mono"', 'monospace'],

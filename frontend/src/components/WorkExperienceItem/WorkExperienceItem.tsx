@@ -21,19 +21,19 @@ export default function WorkExperienceItem({
     return (
         <div className="rounded-md p-4 shadow-sm">
             <div className="flex justify-between items-center mb-4">
-                <span className="text-2xl font-semibold mb-5">{companyName}</span>
+                <span className="text-2xl font-semibold mb-5 text-textMain">{companyName}</span>
             </div>
 
             <div className="mb-4">
-                <h3 className="font-semibold mb-4">Job Duties:</h3>
-                <ul className="list-disc list-inside space-y-1">
+                <h3 className="font-semibold mb-4 text-textMain">Job Duties:</h3>
+                <ul className="list-disc list-inside space-y-1 text-textMain">
                     {jobDuties.map((duty, idx) => (
                         <li key={idx}>{duty}</li>
                     ))}
                 </ul>
             </div>
 
-            <div>
+            <div className="text-textMain">
                 <h3 className="font-semibold mb-4 mt-6">Programming Languages/Frameworks/Tools:</h3>
                 <div className="flex flex-wrap gap-4 items-center">
                     {programmingLanguages.map((lang, idx) => (

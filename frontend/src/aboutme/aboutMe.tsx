@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AboutMe.scss';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import WorkExperienceItem from '../components/WorkExperienceItem/WorkExperienceItem';
 import { ProgrammingLanguage, IconsHelper } from '../helpers/helpers';
 
 const AboutMe: React.FC = () => {
-  const [isDay, setIsDay] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   type JobExperience = {
     companyName: string;
@@ -51,32 +51,66 @@ const AboutMe: React.FC = () => {
     }
   ];
 
+  useEffect(() => {
+    const sideMenu = document.getElementById('aboutMeContainer')
+    if (sideMenu) {
+      if (darkMode) {
+        sideMenu.classList.add('dark-theme');
+      } else {
+        sideMenu.classList.remove('dark-theme');
+      }
+    }
+  }, [darkMode]);
+
   return (
-    <div id="aboutMeContainer" className='font-mono bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950'>
-      <div className="w-full h-20 bg-cardBg border-b-2 border-b-secondary flex">
-        <button className="absolute flex top-0 left-0 items-center text-secondary hover:text-white w-50 h-20 pl-4" onClick={() => window.history.back()}>
+    <div id="aboutMeContainer" className="font-mono bg-primary">
+      <div className="w-full h-20 bg-cardBg border-b-2 border-b-secondary flex shadow-lg">
+        <button className="absolute flex top-0 left-0 items-center text-secondary hover:text-textMain w-50 h-20 pl-4" onClick={() => window.history.back()}>
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           <span>Back</span>
         </button>
         <div className="flex w-full justify-center">
           <div className="flex items-center w-1/2 justify-evenly">
-            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-white py-auto" onClick={() => window.history.back()}>
+            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-textMain py-auto" onClick={() => window.history.back()}>
               <span>Work Experience</span>
             </button>
-            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-white py-auto" onClick={() => window.history.back()}>
+            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-textMain py-auto" onClick={() => window.history.back()}>
               <span>Portfolio</span>
             </button>
-            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-white py-auto" onClick={() => window.history.back()}>
+            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-textMain py-auto" onClick={() => window.history.back()}>
               <span>Education</span>
             </button>
-            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-white py-auto" onClick={() => window.history.back()}>
+            <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-textMain py-auto" onClick={() => window.history.back()}>
               <span>Contact Me</span>
             </button>
           </div>
         </div>
+        <label
+          className="absolute right-0 top-0 flex items-center justify-center text-secondary hover:text-textMain cursor-pointer select-none h-20 pr-4"
+          onClick={(e) => {
+            e.preventDefault();
+            setDarkMode(!darkMode);
+          }}
+        >
+          <div className="flex justify-center items-center flex-col">
+            <div className="inline-flex items-center">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={darkMode}
+                onChange={() => { }}
+                readOnly
+              />
+              <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600" />
+              <span className="ms-3 text-sm font-mono">
+                {darkMode ? "Dark Mode" : "Light Mode"}
+              </span>
+            </div>
+          </div>
+        </label>
       </div>
       <div className="min-h-screen text-white py-5">
-        {/* About Me Section */}
+        { }
         <section className="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto my-20">
           <div className="w-full md:w-1/2 ">
             <img src="Adam.png" alt="Adam Mitro" className="rounded-full shadow-lg w-full h-auto object-cover border-4 border-secondary" />

@@ -9,3 +9,17 @@
   font-style: normal;
   font-display: swap;
 }
+
+:root {
+  --color-primary: #F0F4FF;
+  --color-secondary: #6C7FA2;
+  --color-cardBg: #FFFFFF;
+  --color-textMain: #202B3A;
+}
+
+.dark-theme {
+  --color-primary: #0F172A;       /* Dark slate */
+  --color-secondary: #7DD3FC;     /* Sky blue 300 */
+  --color-cardBg: rgba(255,255,255,0.05);
+  --color-textMain: #F1F5FF;
+}
