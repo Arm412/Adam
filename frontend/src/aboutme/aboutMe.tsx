@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import WorkExperienceItem from '../components/WorkExperienceItem/WorkExperienceItem';
 import { ProgrammingLanguage, IconsHelper } from '../helpers/helpers';
+import PortfolioItem from '../components/PortfolioItem/PortfolioItem';
 
 const AboutMe: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -77,7 +78,7 @@ const AboutMe: React.FC = () => {
         goTo(section as AboutMeNavLocations);
       }
     }
-    
+
   }, []);
 
   function goTo(location: AboutMeNavLocations) {
@@ -152,7 +153,7 @@ const AboutMe: React.FC = () => {
           </div>
         </section>
         {/* Work Experience Section */}
-        <section id="workExperience"  className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
+        <section id="workExperience" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
             <h2 className="text-secondary text-3xl font-bold mb-5 font-mono">Work Experience</h2>
             {jobExperiences.map((experience, index) => (
@@ -169,22 +170,32 @@ const AboutMe: React.FC = () => {
         <section id="portfolio" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg w-full">
             <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Portfolio Projects</h2>
-            <p className="text-lg text-textMain font-mono">
-              Hi, I'm Adam Mitro. I'm a full-stack engineer passionate about building projects that keep me on the cutting edge of programming languages and technologies.
-              I thrive on exploring new tools and frameworks to continuously sharpen my skills and stay ahead in the ever-evolving world of software development.
-            </p>
+            <PortfolioItem></PortfolioItem>
           </div>
         </section>
         {/* Education Section */}
-        <section id="education" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
-          <div className="bg-cardBg p-6 border-y border-secondary shadow-lg w-full">
-            <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Education</h2>
-            <p className="text-lg text-textMain font-mono">
-              University of Pittsburgh, B.S. in Computer Science
-            </p>
-            <p className="text-lg text-textMain font-mono">Start: 2013</p>
-            <p className="text-lg text-textMain font-mono">End: 2017</p>
-            <p className="text-lg text-textMain font-mono">GPA: 3.3; Honors Graduate</p>
+        <section id="education" className="flex md:flex-row items-start gap-8 py-6 w-full mx-auto mb-20">
+          <div className="flex bg-cardBg p-6 border-y border-secondary shadow-lg w-full justify-between">
+            <div className="w-fit">
+              <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Education</h2>
+              <p className="text-lg text-textMain font-mono">
+                University of Pittsburgh, B.S. in Computer Science
+              </p>
+              <p className="text-lg text-textMain font-mono">Start: 2013</p>
+              <p className="text-lg text-textMain font-mono">End: 2017</p>
+              <p className="text-lg text-textMain font-mono">GPA: 3.3; Honors Graduate</p>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="h-full max-h-[150px] aspect-square flex items-center">
+                <img src="/Pitt.png" alt="Pitt" className="max-h-full object-contain" />
+              </div>
+              <div className="h-full max-h-[150px] aspect-square flex items-center">
+                <img src="/PittPanther.png" alt="Panther" className="max-h-full object-contain" />
+              </div>
+              <div className="h-full max-h-[150px] aspect-square flex items-center">
+                <img src="/PantherPaw.png" alt="Paw" className="max-h-full object-contain" />
+              </div>
+            </div>
           </div>
         </section>
         {/* Contact Info Section */}
