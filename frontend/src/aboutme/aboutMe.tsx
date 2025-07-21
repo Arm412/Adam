@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import WorkExperienceItem from '../components/WorkExperienceItem/WorkExperienceItem';
-import { ProgrammingLanguage, IconsHelper } from '../helpers/helpers';
+import { ProgrammingLanguage, IconsHelper, PortfolioProjects } from '../helpers/helpers';
 import PortfolioItem from '../components/PortfolioItem/PortfolioItem';
 
 const AboutMe: React.FC = () => {
@@ -170,13 +170,19 @@ const AboutMe: React.FC = () => {
         <section id="portfolio" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg w-full">
             <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Portfolio Projects</h2>
-            <PortfolioItem></PortfolioItem>
+            {PortfolioProjects.map((project, projIndx) => (
+              <PortfolioItem
+                key={projIndx}
+                projectName={project.projectName}
+                features={project.features}
+              />
+            ))}
           </div>
         </section>
         {/* Education Section */}
         <section id="education" className="flex md:flex-row items-start gap-8 py-6 w-full mx-auto mb-20">
           <div className="flex bg-cardBg p-6 border-y border-secondary shadow-lg w-full justify-between">
-            <div className="w-fit">
+            <div className="w-fit pr-2">
               <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Education</h2>
               <p className="text-lg text-textMain font-mono">
                 University of Pittsburgh, B.S. in Computer Science
