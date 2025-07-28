@@ -1,62 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import WorkExperienceItem from '../components/WorkExperienceItem/WorkExperienceItem';
-import { ProgrammingLanguage, IconsHelper, PortfolioProjects } from '../helpers/helpers';
+import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from '../helpers/helpers';
 import PortfolioItem from '../components/PortfolioItem/PortfolioItem';
 
 const AboutMe: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
-
-  type JobExperience = {
-    companyName: string;
-    jobDuties: string[];
-    programmingLanguages?: ProgrammingLanguage[];
-  };
-
-  enum AboutMeNavLocations {
-    WorkExperience = 'workExperience',
-    Portfolio = 'portfolio',
-    Education = 'education',
-    ContactInfo = 'contactInfo'
-  }
-
-  const jobExperiences: JobExperience[] = [
-    {
-      companyName: "Software Design Solutions Inc.",
-      jobDuties: [
-        "Implemented Behavior-Driven Development testing for .NET web applications using SpecFlow and Gherkin, enhancing test coverage and ensuring alignment with business requirements.",
-        "Performed embedded development on Linux using the Yocto Project to create recipes for building and deploying firmware images to the BeagleBone Black.",
-        "Established and maintained rigorous software testing standards, ensuring high product quality.",
-        "Participated in Agile sprint planning, identifying risks and proposing mitigation strategies.",
-        "Led debugging efforts to resolve software defects, improving product stability and customer satisfaction.",
-        "Conducted peer code reviews to optimize software development processes and maintain code integrity."
-      ],
-      programmingLanguages: [
-        { name: "C++", icon: IconsHelper.Cpp },
-        { name: "Typescript", icon: IconsHelper.Typescript },
-        { name: "HTML5", icon: IconsHelper.HTML5 },
-        { name: "CSS3", icon: IconsHelper.CSS3 },
-        { name: "Gherkin", icon: IconsHelper.Cucumber },
-        { name: "The Yocto Project", icon: IconsHelper.Yocto }
-      ]
-    },
-    {
-      companyName: "UPMC Enterprises",
-      jobDuties: [
-        "Developed and enhanced the MyUPMC web, iOS, and Android healthcare applications, improving user experience and patient engagement, with over 1 million monthly active users.",
-        "Developed custom Angular components in TypeScript for the MyUPMC patient portal, leveraging NGXS for efficient and scalable state management.",
-        "Managed and processed data interactions with backend services via Java Spring Boot APIs.",
-        "Integrated SwiftUI and Jetpack Compose to modernize application functionality.",
-        "Collaborated with UX designers and product teams to define requirements and design intuitive interfaces."
-      ],
-      programmingLanguages: [
-        { name: "C++", icon: IconsHelper.Cpp },
-        { name: "Typescript", icon: IconsHelper.Typescript },
-        { name: "HTML5", icon: IconsHelper.HTML5 },
-        { name: "CSS3", icon: IconsHelper.CSS3 }
-      ]
-    }
-  ];
 
   useEffect(() => {
     const sideMenu = document.getElementById('aboutMeContainer')
@@ -140,7 +89,7 @@ const AboutMe: React.FC = () => {
       </div>
       <div className="min-h-screen text-white py-5">
         <section className="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto my-20">
-          <div className="w-full md:w-1/2 ">
+          <div className="w-full md:w-1/2">
             <img src="Adam.png" alt="Adam Mitro" className="rounded-full shadow-lg w-full h-auto object-cover border-4 border-secondary" />
           </div>
 
@@ -175,14 +124,15 @@ const AboutMe: React.FC = () => {
                 key={projIndx}
                 projectName={project.projectName}
                 features={project.features}
+                programmingLanguages={project.programmingLanguages}
               />
             ))}
           </div>
         </section>
         {/* Education Section */}
-        <section id="education" className="flex md:flex-row items-start gap-8 py-6 w-full mx-auto mb-20">
-          <div className="flex bg-cardBg p-6 border-y border-secondary shadow-lg w-full justify-between">
-            <div className="w-fit pr-2">
+        <section id="education" className="flex flex-col lg:flex-row items-start gap-8 py-6 w-full mx-auto mb-20">
+          <div className="flex flex-col lg:flex-row bg-cardBg p-6 border-y border-secondary shadow-lg w-full justify-between">
+            <div className="w-full lg:w-1/2">
               <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Education</h2>
               <p className="text-lg text-textMain font-mono">
                 University of Pittsburgh, B.S. in Computer Science
@@ -191,7 +141,7 @@ const AboutMe: React.FC = () => {
               <p className="text-lg text-textMain font-mono">End: 2017</p>
               <p className="text-lg text-textMain font-mono">GPA: 3.3; Honors Graduate</p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 w-full lg:w-1/2 justify-center mt-6 lg:mt-0">
               <div className="h-full max-h-[150px] aspect-square flex items-center">
                 <img src="/Pitt.png" alt="Pitt" className="max-h-full object-contain" />
               </div>
@@ -204,6 +154,7 @@ const AboutMe: React.FC = () => {
             </div>
           </div>
         </section>
+
         {/* Contact Info Section */}
         <section id="contactInfo" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6  border-y border-secondary w-full shadow-lg">

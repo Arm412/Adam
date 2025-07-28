@@ -1,4 +1,5 @@
 import React from 'react';
+import { PortfolioItemProps } from '../../helpers/helpers';
 
 type PortfolioFeature = {
   title: string;
@@ -10,9 +11,9 @@ type PortfolioFeature = {
   }[];
 };
 
-type PortfolioItemProps = {
-  projectName?: string;
-  features?: PortfolioFeature[];
+type ProgrammingLanguage = {
+  name: string;
+  icon: string;
 };
 
 const defaultFeatures: PortfolioFeature[] = [
@@ -33,7 +34,12 @@ const defaultFeatures: PortfolioFeature[] = [
   },
 ];
 
-export default function PortfolioItem({ projectName = "Dummy Project", features = defaultFeatures }: PortfolioItemProps) {
+export default function PortfolioItem({
+  projectName = "Dummy Project",
+  features = defaultFeatures,
+  programmingLanguages = [
+    { name: "Typescript", icon: "/icons/typescript-96.png" }
+  ] }: PortfolioItemProps) {
   return (
     <div className="p-6 w-full">
       <h2 className="flex justify-center text-secondary text-2xl font-bold mb-6 font-mono">{projectName}</h2>
@@ -74,6 +80,17 @@ export default function PortfolioItem({ projectName = "Dummy Project", features 
             )}
           </div>
         ))}
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold text-secondary mt-8 mb-4 font-mono">Technologies Used:</h3>
+        <ul className="list-disc list-inside space-y-1 text-textMain">
+          {programmingLanguages.map((lang, idx) => (
+            <li key={idx} className="flex items-center space-x-2">
+              <img src={lang.icon} alt={lang.name} className="w-6 h-6" />
+              <span>{lang.name}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
