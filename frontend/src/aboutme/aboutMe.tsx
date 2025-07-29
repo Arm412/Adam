@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { ArrowLeftIcon } from '@heroicons/react/24/solid';
-import WorkExperienceItem from '../components/WorkExperienceItem/WorkExperienceItem';
-import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from '../helpers/helpers';
-import PortfolioItem from '../components/PortfolioItem/PortfolioItem';
+import React, { useEffect, useState } from "react";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
+import WorkExperienceItem from "../components/WorkExperienceItem/WorkExperienceItem";
+import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from "../helpers/helpers";
+import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
 
 const AboutMe: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const sideMenu = document.getElementById('aboutMeContainer')
+    const sideMenu = document.getElementById("aboutMeContainer")
     if (sideMenu) {
       if (darkMode) {
-        sideMenu.classList.add('dark-theme');
+        sideMenu.classList.add("dark-theme");
       } else {
-        sideMenu.classList.remove('dark-theme');
+        sideMenu.classList.remove("dark-theme");
       }
     }
   }, [darkMode]);
 
   useEffect(() => {
-    const queryParam = document.URL.split('?')[1];
+    const queryParam = document.URL.split("?")[1];
     if (queryParam) {
-      const section = queryParam.split('=')[1];
+      const section = queryParam.split("=")[1];
       if (section) {
         const element = document.getElementById(section);
         goTo(section as AboutMeNavLocations);
@@ -35,7 +35,7 @@ const AboutMe: React.FC = () => {
     if (element) {
       window.scrollTo({
         top: element.offsetTop,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
   }
@@ -104,7 +104,7 @@ const AboutMe: React.FC = () => {
         {/* Work Experience Section */}
         <section id="workExperience" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
-            <h2 className="text-secondary text-3xl font-bold mb-5 font-mono">Work Experience</h2>
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Work Experience</h2>
             {jobExperiences.map((experience, index) => (
               <WorkExperienceItem
                 key={index}
@@ -118,7 +118,7 @@ const AboutMe: React.FC = () => {
         {/* Portfolio Section */}
         <section id="portfolio" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg w-full">
-            <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Portfolio Projects</h2>
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Portfolio Projects</h2>
             {PortfolioProjects.map((project, projIndx) => (
               <PortfolioItem
                 key={projIndx}

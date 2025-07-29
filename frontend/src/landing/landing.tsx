@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import './landing.scss';
+import React, { useEffect, useState } from "react";
+import "./landing.scss";
 
 const Landing: React.FC = () => {
   const [isDay, setIsDay] = useState(true);
@@ -7,26 +7,26 @@ const Landing: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const sideMenu = document.getElementById('sideMenu')
+    const sideMenu = document.getElementById("sideMenu")
     if (sideMenu) {
       if (showMenu) {
-        sideMenu.classList.add('active');
+        sideMenu.classList.add("active");
       } else {
-        sideMenu.classList.remove('active');
+        sideMenu.classList.remove("active");
       }
     }
   }, [showMenu]);
 
   useEffect(() => {
-      const sideMenu = document.getElementById('sideMenu')
-      if (sideMenu) {
-        if (darkMode) {
-          sideMenu.classList.add('dark-theme');
-        } else {
-          sideMenu.classList.remove('dark-theme');
-        }
+    const sideMenu = document.getElementById("sideMenu")
+    if (sideMenu) {
+      if (darkMode) {
+        sideMenu.classList.add("dark-theme");
+      } else {
+        sideMenu.classList.remove("dark-theme");
       }
-    }, [darkMode]);
+    }
+  }, [darkMode]);
 
   return (
     <div id="landingContainer">
@@ -64,36 +64,36 @@ const Landing: React.FC = () => {
               </label>
             </div>
             <div className="side-menu-content text-textMain">
-              <button className="menu-option" onClick={() => window.location.href = '/aboutme'}>
+              <button className="menu-option" onClick={() => window.location.href = "/aboutme"}>
                 <h4>About Info</h4>
               </button>
-              <button className="menu-option" onClick={() => window.location.href = '/aboutme?section=workExperience'}>
+              <button className="menu-option" onClick={() => window.location.href = "/aboutme?section=workExperience"}>
                 <h4>Work Experience</h4>
               </button>
-              <button className="menu-option" onClick={() => window.location.href = '/aboutme?section=portfolio'}>
+              <button className="menu-option" onClick={() => window.location.href = "/aboutme?section=portfolio"}>
                 <h4>Portfolio</h4>
               </button>
-              <button className="menu-option" onClick={() => window.location.href = '/aboutme?section=education'}>
+              <button className="menu-option" onClick={() => window.location.href = "/aboutme?section=education"}>
                 <h4>Education</h4>
               </button>
-              <button className="menu-option" onClick={() => window.location.href = '/aboutme?section=contactInfo'}>
+              <button className="menu-option" onClick={() => window.location.href = "/aboutme?section=contactInfo"}>
                 <h4>Contact Info</h4>
               </button>
               <div className="social-buttons">
-                <button className="social-option" onClick={() => window.open('https://www.linkedin.com/in/adam-mitro-3b1a6a142/', '_blank')}>
+                <button className="social-option" onClick={() => window.open("https://www.linkedin.com/in/adam-mitro-3b1a6a142/", "_blank")}>
                   <img src="/icons/linkedin.png" alt="LinkedIn" />
                 </button>
-                <button className="social-option" onClick={() => window.open('https://www.github.com/Arm412', '_blank')}>
+                <button className="social-option" onClick={() => window.open("https://www.github.com/Arm412", "_blank")}>
                   <img src="/icons/github.png" alt="GitHub" />
                 </button>
               </div>
             </div>
           </div>
           <div className="nav-section">
-            <button className="nav-button" id='linkedIn' onClick={() => window.open('https://www.linkedin.com/in/adam-mitro-3b1a6a142/', '_blank')}>
+            <button className="nav-button" id="linkedIn" onClick={() => window.open("https://www.linkedin.com/in/adam-mitro-3b1a6a142/", "_blank")}>
               <img src="/icons/linkedin.png" alt="LinkedIn" />
             </button>
-            <button className="nav-button" id='github' onClick={() => window.open('https://www.github.com/Arm412', '_blank')}>
+            <button className="nav-button" id="github" onClick={() => window.open("https://www.github.com/Arm412", "_blank")}>
               <img src="/icons/github.png" alt="github" />
             </button>
             <div className="menu-button-container" onClick={() => setShowMenu(true)}>
@@ -105,15 +105,15 @@ const Landing: React.FC = () => {
           <div className="monitor-screen">
             <img
               className="select-none"
-              src={isDay ? 'PittsburghDayAnimation.gif' : 'pittsburghNight.png'}
+              src={isDay ? "PittsburghDayAnimation.gif" : "pittsburghNight.png"}
               alt="Game screen"
             />
           </div>
           <div className="white-board">
             <h4 className="header">Hi! Welcome to my page!</h4>
             <div>
-              <button className="option" onClick={() => window.location.href = '/aboutme'}>About me</button>
-              <button className="option" onClick={() => window.location.href = '/aboutme'}>Contact Info</button>
+              <button className="option" onClick={() => window.location.href = "/aboutme"}>About me</button>
+              <button className="option" onClick={() => window.location.href = "/aboutme"}>Contact Info</button>
             </div>
           </div>
         </div>
