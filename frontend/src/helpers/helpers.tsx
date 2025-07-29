@@ -145,8 +145,11 @@ const pokedexiOSFeatures: PortfolioFeature[] = [
 const pokedexAndroidFeatures: PortfolioFeature[] = [
   {
     title: "Pokemon List",
-    details: ["Browse a complete list of the first 386 Pokémon, spanning from Bulbasaur to Deoxys, each displayed with their name and sprite. Favorites are also indicated by a star.",
-      "Filter the list dynamically by your favorited Pokémon, element types (like Fire, Water, or Psychic), or by using the search bar to find Pokémon by name. All filters can be combined for precise results.",
+    details: [
+      "Browse all official Pokémon from the PokeAPI.",
+      "Switch between Small, Medium, and Large tile sizes to change how much info is displayed per Pokémon.",
+      "Toggle between default and shiny sprites.",
+      "Use the search bar to filter Pokémon by name. This only searches the currently loaded batch from the API."
     ],
     media: [
       {
@@ -154,13 +157,15 @@ const pokedexAndroidFeatures: PortfolioFeature[] = [
         src: "/videos/PokemonListAndroid.mp4",
         alt: "Pokemon List"
       }
-    ],
+    ]
   },
   {
     title: "Pokemon Details",
     details: [
-      "Inspired by the classic game, you'll be presented with the silhouette of a mystery Pokémon and challenged to guess its identity to reveal the full image.",
-      "If you're stuck, you can either skip to the next Pokémon or request a hint that provides an anagram of its name to help you solve the puzzle."
+      "Tap a Pokémon to view its details, including name, types, description, size, height, and base stats.",
+      "Switch between shiny and default sprites.",
+      "See the previous and next evolutions, and navigate to them directly.",
+      "View a type effectiveness chart showing how other types interact with the selected Pokémon's types; helpful for planning battles."
     ],
     media: [
       {
