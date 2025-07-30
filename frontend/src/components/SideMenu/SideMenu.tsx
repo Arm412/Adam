@@ -51,19 +51,34 @@ export default function SideMenu({
         </label>
       </div>
       <div className="flex flex-col h-full w-full text-textMain">
-        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => window.location.href = "/aboutme"}>
-          <h4>About Info</h4>
+        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => {
+          navigateFunction(AboutMeNavLocations.AboutMe);
+          setShowMenu(false);
+        }}>
+          <h4>About Me</h4>
         </button>
-        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => navigateFunction(AboutMeNavLocations.WorkExperience)}>
+        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => {
+          navigateFunction(AboutMeNavLocations.WorkExperience);
+          setShowMenu(false);
+        }}>
           <h4>Work Experience</h4>
         </button>
-        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => navigateFunction(AboutMeNavLocations.Portfolio)}>
+        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => {
+          navigateFunction(AboutMeNavLocations.Portfolio);
+          setShowMenu(false);
+        }}>
           <h4>Portfolio</h4>
         </button>
-        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => navigateFunction(AboutMeNavLocations.Education)}>
+        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => {
+          navigateFunction(AboutMeNavLocations.Education);
+          setShowMenu(false);
+        }}>
           <h4>Education</h4>
         </button>
-        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => navigateFunction(AboutMeNavLocations.ContactInfo)}>
+        <button className="w-full py-5 text-center text-[clamp(1rem,1.5vw,2.5rem)] border-t border-secondary cursor-pointer hover:text-primary hover:bg-secondary last:border-b" onClick={() => {
+          navigateFunction(AboutMeNavLocations.ContactInfo);
+          setShowMenu(false);
+        }}>
           <h4>Contact Info</h4>
         </button>
         <div className="flex flex-row w-full h-[100px] mt-auto justify-around items-center">

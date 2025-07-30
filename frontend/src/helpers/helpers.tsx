@@ -14,7 +14,11 @@ export enum IconsHelper {
   SQLite = "/icons/sqlite-96.png",
   Cpp = "/icons/cplusplus-96.png",
   Cucumber = "icons/cucumber.png",
-  Yocto = "/icons/yocto.png"
+  Yocto = "/icons/yocto.png",
+  SpringBoot = "/icons/spring-boot-80.png",
+  Kotest = "/icons/kotest.png",
+  Postman = "/icons/postman-96.png",
+  QuickNimble = "/icons/quickNimble.png",
 }
 
 // Icons by Icons8 — https://icons8.com
@@ -31,6 +35,7 @@ type JobExperience = {
 };
 
 export enum AboutMeNavLocations {
+  AboutMe = "aboutMe",
   WorkExperience = "workExperience",
   Portfolio = "portfolio",
   Education = "education",
@@ -67,10 +72,17 @@ export const jobExperiences: JobExperience[] = [
       "Collaborated with UX designers and product teams to define requirements and design intuitive interfaces."
     ],
     programmingLanguages: [
-      { name: "C++", icon: IconsHelper.Cpp },
       { name: "Typescript", icon: IconsHelper.Typescript },
       { name: "HTML5", icon: IconsHelper.HTML5 },
-      { name: "CSS3", icon: IconsHelper.CSS3 }
+      { name: "CSS3/SCSS", icon: IconsHelper.CSS3 },
+      { name: "Kotlin/JetPack Compose", icon: IconsHelper.Kotlin },
+      { name: "Swift/SwiftUI", icon: IconsHelper.Swift },
+      { name: "Spring Boot", icon: IconsHelper.SpringBoot },
+      { name: "Java", icon: IconsHelper.Java },
+      { name: "Angular", icon: IconsHelper.Angular },
+      { name: "Kotest", icon: IconsHelper.Kotest },
+      { name: "Quick/Nimble", icon: IconsHelper.QuickNimble },
+      { name: "Postman", icon: IconsHelper.Postman }
     ]
   }
 ];

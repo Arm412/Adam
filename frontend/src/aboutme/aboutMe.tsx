@@ -10,7 +10,7 @@ const AboutMe: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    const sideMenu = document.getElementById("aboutMeContainer")
+    const sideMenu = document.getElementById("aboutMe")
     if (sideMenu) {
       if (darkMode) {
         sideMenu.classList.add("dark-theme");
@@ -34,15 +34,15 @@ const AboutMe: React.FC = () => {
     const element = document.getElementById(location);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop,
+        top: element.offsetTop - 80, // Adjust for fixed header height
         behavior: "smooth"
       });
     }
   }
 
   return (
-    <div id="aboutMeContainer" className="font-mono bg-primary">
-      <div className="fixed top-2 right-2 w-[50px] h-[50px] z-30 flex flex-col justify-center items-center gap-1 cursor-pointer md:hidden" onClick={() => setShowMenu(true)}>
+    <div id="aboutMe" className="font-mono bg-primary">
+      <div className="fixed top-2 right-2 w-[50px] h-[50px] z-30 flex flex-col justify-center items-center gap-1 cursor-pointer md:hidden bg-primary" onClick={() => setShowMenu(true)}>
         <span className="block w-8 h-1 bg-textMain rounded"></span>
         <span className="block w-8 h-1 bg-textMain rounded"></span>
         <span className="block w-8 h-1 bg-textMain rounded"></span>

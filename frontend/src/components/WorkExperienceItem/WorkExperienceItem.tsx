@@ -35,8 +35,8 @@ export default function WorkExperienceItem({
         </div>
 
         <div className="text-textMain">
-          <h3 className="font-semibold mb-4 mt-6">Programming Languages/Frameworks/Tools:</h3>
-          <div className="flex flex-wrap gap-4 items-center">
+          <h3 className="font-semibold mb-4 mt-6">Programming Languages/Frameworks/Tools/Testing:</h3>
+          <div className="flex flex-wrap items-center gap-x-36 gap-y-10">
             {programmingLanguages.map((lang, idx) => (
               <div key={idx} className="flex items-center space-x-2">
                 <img src={lang.icon} alt={lang.name} className="w-6 h-6" />
