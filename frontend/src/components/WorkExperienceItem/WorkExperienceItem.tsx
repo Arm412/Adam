@@ -20,7 +20,6 @@ export default function WorkExperienceItem({
 }: WorkExperienceItemProps) {
   return (
     <>
-      <hr className="border-t-2 border-secondary"></hr>
       <div className="rounded-md p-4">
         <div className="flex justify-between items-center mb-4">
           <span className="text-2xl font-semibold mb-5 text-textMain">{companyName}</span>

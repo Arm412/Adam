@@ -11,11 +11,6 @@ type PortfolioFeature = {
   }[];
 };
 
-type ProgrammingLanguage = {
-  name: string;
-  icon: string;
-};
-
 const defaultFeatures: PortfolioFeature[] = [
   {
     title: "Feature 1",
@@ -42,7 +37,6 @@ export default function PortfolioItem({
   ] }: PortfolioItemProps) {
   return (
     <>
-      <hr className="border-t-2 border-secondary"></hr>
       <div className="p-6 w-full">
         <h2 className="flex justify-center text-textMain text-2xl font-bold mb-6 font-mono">{projectName}</h2>
         <div className="flex flex-col gap-8">

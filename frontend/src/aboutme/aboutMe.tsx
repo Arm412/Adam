@@ -3,9 +3,11 @@ import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import WorkExperienceItem from "../components/WorkExperienceItem/WorkExperienceItem";
 import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from "../helpers/helpers";
 import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
+import SideMenu from "../components/SideMenu/SideMenu";
 
 const AboutMe: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const sideMenu = document.getElementById("aboutMeContainer")
@@ -23,11 +25,9 @@ const AboutMe: React.FC = () => {
     if (queryParam) {
       const section = queryParam.split("=")[1];
       if (section) {
-        const element = document.getElementById(section);
         goTo(section as AboutMeNavLocations);
       }
     }
-
   }, []);
 
   function goTo(location: AboutMeNavLocations) {
@@ -42,13 +42,23 @@ const AboutMe: React.FC = () => {
 
   return (
     <div id="aboutMeContainer" className="font-mono bg-primary">
-      <div className="w-full h-20 bg-cardBg border-b-2 border-b-secondary flex shadow-lg">
-        <button className="absolute flex top-0 left-0 items-center text-secondary hover:text-textMain w-50 h-20 pl-4" onClick={() => window.history.back()}>
+      <div className="fixed top-2 right-2 w-[50px] h-[50px] z-30 flex flex-col justify-center items-center gap-1 cursor-pointer md:hidden" onClick={() => setShowMenu(true)}>
+        <span className="block w-8 h-1 bg-textMain rounded"></span>
+        <span className="block w-8 h-1 bg-textMain rounded"></span>
+        <span className="block w-8 h-1 bg-textMain rounded"></span>
+      </div>
+      <SideMenu navigateFunction={goTo}
+        showMenu={showMenu}
+        setShowMenu={setShowMenu}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode} />
+      <div className="w-full h-20 bg-primary border-b-2 border-b-secondary md:flex hidden shadow-lg fixed">
+        {/* <button className="absolute flex top-0 left-0 items-center text-secondary hover:text-textMain w-50 h-20 pl-4" onClick={() => window.history.back()}>
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           <span>Back</span>
-        </button>
+        </button> */}
         <div className="flex w-full justify-center">
-          <div className="flex items-center w-1/2 justify-evenly">
+          <div className="flex items-center w-1/2 justify-evenly gap-5">
             <button className="h-full flex-1 flex items-center justify-center text-secondary hover:text-textMain py-auto" onClick={() => goTo(AboutMeNavLocations.WorkExperience)}>
               <span>Work Experience</span>
             </button>
@@ -88,8 +98,8 @@ const AboutMe: React.FC = () => {
         </label>
       </div>
       <div className="min-h-screen text-white py-5">
-        <section className="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto my-20">
-          <div className="w-full md:w-1/2">
+        <section className="flex flex-col md:flex-row items-center gap-8 p-6 max-w-7xl mx-auto md:my-20">
+          <div className="w-fit px-[50px] md:px-0">
             <img src="Adam.png" alt="Adam Mitro" className="rounded-full shadow-lg w-full h-auto object-cover border-4 border-secondary" />
           </div>
 
@@ -106,26 +116,32 @@ const AboutMe: React.FC = () => {
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
             <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Work Experience</h2>
             {jobExperiences.map((experience, index) => (
-              <WorkExperienceItem
-                key={index}
-                companyName={experience.companyName}
-                jobDuties={experience.jobDuties}
-                programmingLanguages={experience.programmingLanguages}
-              />
+              <React.Fragment key={index}>
+                {index > 0 && <hr className="border-secondary my-4" />}
+                <WorkExperienceItem
+                  companyName={experience.companyName}
+                  jobDuties={experience.jobDuties}
+                  programmingLanguages={experience.programmingLanguages}
+                />
+              </React.Fragment>
             ))}
           </div>
+
         </section>
         {/* Portfolio Section */}
         <section id="portfolio" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg w-full">
             <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Portfolio Projects</h2>
             {PortfolioProjects.map((project, projIndx) => (
-              <PortfolioItem
-                key={projIndx}
-                projectName={project.projectName}
-                features={project.features}
-                programmingLanguages={project.programmingLanguages}
-              />
+              <React.Fragment key={projIndx}>
+                {projIndx > 0 && <hr className="border-secondary my-4" />}
+                <PortfolioItem
+                  key={projIndx}
+                  projectName={project.projectName}
+                  features={project.features}
+                  programmingLanguages={project.programmingLanguages}
+                />
+              </React.Fragment>
             ))}
           </div>
         </section>
@@ -160,13 +176,13 @@ const AboutMe: React.FC = () => {
           <div className="bg-cardBg p-6  border-y border-secondary w-full shadow-lg">
             <h2 className="text-secondary text-3xl font-bold mb-4 font-mono">Contact Info</h2>
             <p className="text-lg text-textMain font-mono">
-              Email - <a href="mailto:adam.mitro@gmail.com" className="text-secondary hover:text-white">adam.mitro@gmail.com</a>
+              Email - <a href="mailto:adam.mitro@gmail.com" className="text-secondary hover:text-textMain">adam.mitro@gmail.com</a>
             </p>
             <p className="text-lg text-textMain font-mono">
-              Github - <a href="https://www.github.com/Arm412" className="text-secondary hover:text-white">Arm412</a>
+              Github - <a href="https://www.github.com/Arm412" className="text-secondary hover:text-textMain">Arm412</a>
             </p>
             <p className="text-lg text-textMain font-mono">
-              LinkedIn - <a href="https://www.linkedin.com/in/adam-mitro-3b1a6a142/" className="text-secondary hover:text-white">Adam Mitro</a>
+              LinkedIn - <a href="https://www.linkedin.com/in/adam-mitro-3b1a6a142/" className="text-secondary hover:text-textMain">Adam Mitro</a>
             </p>
           </div>
         </section>
