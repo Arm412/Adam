@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import WorkExperienceItem from "../components/WorkExperienceItem/WorkExperienceItem";
 import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from "../helpers/helpers";
 import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
@@ -52,7 +51,7 @@ const AboutMe: React.FC = () => {
         setShowMenu={setShowMenu}
         darkMode={darkMode}
         setDarkMode={setDarkMode} />
-      <div className="w-full h-20 bg-primary border-b-2 border-b-secondary md:flex hidden shadow-lg fixed">
+      <div className="w-full h-20 bg-primary border-b-2 border-b-secondary md:flex hidden shadow-lg fixed z-10">
         {/* <button className="absolute flex top-0 left-0 items-center text-secondary hover:text-textMain w-50 h-20 pl-4" onClick={() => window.history.back()}>
           <ArrowLeftIcon className="h-5 w-5 mr-2" />
           <span>Back</span>
