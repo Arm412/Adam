@@ -112,7 +112,7 @@ const pokedexiOSFeatures: PortfolioFeature[] = [
     media: [
       {
         type: "video",
-        src: "/videos/PokemonListFeatures.m4v",
+        src: "/videos/PokemonListFeaturesiOS.m4v",
         alt: "Pokemon List"
       }
     ],
