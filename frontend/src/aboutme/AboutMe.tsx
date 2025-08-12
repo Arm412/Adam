@@ -5,17 +5,18 @@ import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
 import SideMenu from "../components/SideMenu/SideMenu";
 
 const AboutMe: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    return localStorage.getItem("darkMode") === "true";
+  });
+
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
-    const sideMenu = document.getElementById("aboutMe")
+    localStorage.setItem("darkMode", String(darkMode));
+
+    const sideMenu = document.getElementById("aboutMe");
     if (sideMenu) {
-      if (darkMode) {
-        sideMenu.classList.add("dark-theme");
-      } else {
-        sideMenu.classList.remove("dark-theme");
-      }
+      sideMenu.classList.toggle("dark-theme", darkMode);
     }
   }, [darkMode]);
 
