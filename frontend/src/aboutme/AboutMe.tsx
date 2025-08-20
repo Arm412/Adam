@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WorkExperienceItem from "../components/WorkExperienceItem/WorkExperienceItem";
-import { jobExperiences, AboutMeNavLocations, PortfolioProjects } from "../helpers/helpers";
+import { jobExperiences, AboutMeNavLocations, PortfolioProjects, techStack } from "../helpers/helpers";
 import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
 import SideMenu from "../components/SideMenu/SideMenu";
 
@@ -111,6 +111,23 @@ const AboutMe: React.FC = () => {
             </p>
           </div>
         </section>
+        {/* Skills Section */}
+        <section id="workExperience" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
+          <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Tech Skills</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {techStack.map((tech, index) => (
+                <React.Fragment key={index}>
+                  {index > 0}
+                  <div className="flex items-center gap-4 mb-4">
+                    <img src={tech.icon} alt={tech.name} className="w-8 h-8" />
+                    <span className="text-lg text-textMain font-mono">{tech.name}</span>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </section>
         {/* Work Experience Section */}
         <section id="workExperience" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
@@ -126,7 +143,6 @@ const AboutMe: React.FC = () => {
               </React.Fragment>
             ))}
           </div>
-
         </section>
         {/* Portfolio Section */}
         <section id="portfolio" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
