@@ -1,4 +1,5 @@
 import React from "react";
+import IconListItem from "../IconListItem/IconListItem";
 
 type ProgrammingLanguage = {
   name: string;
@@ -36,11 +37,10 @@ export default function WorkExperienceItem({
 
         <div className="text-textMain">
           <h3 className="font-semibold mb-4 mt-6">Programming Languages/Frameworks/Tools/Testing:</h3>
-          <div className="flex flex-wrap items-center gap-x-36 gap-y-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {programmingLanguages.map((lang, idx) => (
               <div key={idx} className="flex items-center space-x-2">
-                <img src={lang.icon} alt={lang.name} className="w-6 h-6" />
-                <span>{lang.name}</span>
+                <IconListItem icon={lang.icon} name={lang.name} key={idx} />
               </div>
             ))}
           </div>

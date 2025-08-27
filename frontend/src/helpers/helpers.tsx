@@ -1,25 +1,110 @@
-export enum IconsHelper {
-  // Icon locations for the site
-  Github = "/icons/github.png",
-  LinkedIn = "/icons/linkedin.png",
-  Kotlin = "/icons/kotlin-96.png",
-  Swift = "/icons/swift-96.png",
-  Typescript = "/icons/typescript-96.png",
-  Angular = "/icons/angular-96.png",
-  React = "/icons/react-96.png",
-  Java = "/icons/java-96.png",
-  Python = "/icons/python-96.png",
-  HTML5 = "/icons/html5-96.png",
-  CSS3 = "/icons/css3-96.png",
-  SQLite = "/icons/sqlite-96.png",
-  Cpp = "/icons/cplusplus-96.png",
-  Cucumber = "icons/cucumber.png",
-  Yocto = "/icons/yocto.png",
-  SpringBoot = "/icons/spring-boot-80.png",
-  Kotest = "/icons/kotest.png",
-  Postman = "/icons/postman-96.png",
-  QuickNimble = "/icons/quickNimble.png",
+export enum TechCategory {
+  Language = "language",
+  Framework = "framework",
+  Tool = "tool",
+  External = "external"
 }
+
+export const LanguageIcons = {
+  Kotlin: {
+    name: "Kotlin",
+    icon: "/icons/kotlin-96.png"
+  },
+  Swift: {
+    name: "Swift",
+    icon: "/icons/swift-96.png"
+  },
+  Typescript: {
+    name: "TypeScript",
+    icon: "/icons/typescript-96.png"
+  },
+  Java: {
+    name: "Java",
+    icon: "/icons/java-96.png"
+  },
+  Python: {
+    name: "Python",
+    icon: "/icons/python-96.png"
+  },
+  HTML5: {
+    name: "HTML5",
+    icon: "/icons/html5-96.png"
+  },
+  CSS3: {
+    name: "CSS3/SCSS",
+    icon: "/icons/css3-96.png"
+  },
+  Cpp: {
+    name: "C++",
+    icon: "/icons/cplusplus-96.png"
+  },
+  CSharp: {
+    name: "C#",
+    icon: "/icons/c-sharp-96.png"
+  }
+} as const;
+
+export const FrameworkIcons = {
+  Angular: {
+    name: "Angular",
+    icon: "/icons/angular-96.png"
+  },
+  React: {
+    name: "React",
+    icon: "/icons/react-80.png"
+  },
+  SpringBoot: {
+    name: "Spring Boot",
+    icon: "/icons/spring-boot-80.png"
+  },
+  SwiftUI: {
+    name: "SwiftUI",
+    icon: "/icons/swift-96.png"
+  },
+  Jetpack: {
+    name: "Jetpack Compose",
+    icon: "/icons/kotlin-96.png"
+  },
+} as const;
+
+export const ToolIcons = {
+  SQLite: {
+    name: "SQLite",
+    icon: "/icons/sqlite-100.png"
+  },
+  Cucumber: {
+    name: "Gherkin",
+    icon: "/icons/cucumber.png"
+  },
+  Yocto: {
+    name: "The Yocto Project",
+    icon: "/icons/yocto.png"
+  },
+  Kotest: {
+    name: "Kotest",
+    icon: "/icons/kotest.png"
+  },
+  Postman: {
+    name: "Postman",
+    icon: "/icons/postman-96.png"
+  },
+  QuickNimble: {
+    name: "Quick/Nimble",
+    icon: "/icons/quickNimble.png"
+  }
+} as const;
+
+export const ExternalIcons = {
+  Github: {
+    name: "GitHub",
+    icon: "/icons/github.png"
+  },
+  LinkedIn: {
+    name: "LinkedIn",
+    icon: "/icons/linkedin.png"
+  }
+} as const;
+
 
 // Icons by Icons8 — https://icons8.com
 
@@ -54,12 +139,12 @@ export const jobExperiences: JobExperience[] = [
       "Conducted peer code reviews to optimize software development processes and maintain code integrity."
     ],
     programmingLanguages: [
-      { name: "C++", icon: IconsHelper.Cpp },
-      { name: "Typescript", icon: IconsHelper.Typescript },
-      { name: "HTML5", icon: IconsHelper.HTML5 },
-      { name: "CSS3", icon: IconsHelper.CSS3 },
-      { name: "Gherkin", icon: IconsHelper.Cucumber },
-      { name: "The Yocto Project", icon: IconsHelper.Yocto }
+      { name: LanguageIcons.Cpp.name, icon: LanguageIcons.Cpp.icon },
+      { name: LanguageIcons.Typescript.name, icon: LanguageIcons.Typescript.icon },
+      { name: LanguageIcons.HTML5.name, icon: LanguageIcons.HTML5.icon },
+      { name: LanguageIcons.CSS3.name, icon: LanguageIcons.CSS3.icon },
+      { name: ToolIcons.Cucumber.name, icon: ToolIcons.Cucumber.icon },
+      { name: ToolIcons.Yocto.name, icon: ToolIcons.Yocto.icon }
     ]
   },
   {
@@ -72,17 +157,17 @@ export const jobExperiences: JobExperience[] = [
       "Collaborated with UX designers and product teams to define requirements and design intuitive interfaces."
     ],
     programmingLanguages: [
-      { name: "Typescript", icon: IconsHelper.Typescript },
-      { name: "HTML5", icon: IconsHelper.HTML5 },
-      { name: "CSS3/SCSS", icon: IconsHelper.CSS3 },
-      { name: "Kotlin/JetPack Compose", icon: IconsHelper.Kotlin },
-      { name: "Swift/SwiftUI", icon: IconsHelper.Swift },
-      { name: "Spring Boot", icon: IconsHelper.SpringBoot },
-      { name: "Java", icon: IconsHelper.Java },
-      { name: "Angular", icon: IconsHelper.Angular },
-      { name: "Kotest", icon: IconsHelper.Kotest },
-      { name: "Quick/Nimble", icon: IconsHelper.QuickNimble },
-      { name: "Postman", icon: IconsHelper.Postman }
+      { name: LanguageIcons.Typescript.name, icon: LanguageIcons.Typescript.icon },
+      { name: LanguageIcons.HTML5.name, icon: LanguageIcons.HTML5.icon },
+      { name: LanguageIcons.CSS3.name, icon: LanguageIcons.CSS3.icon },
+      { name: LanguageIcons.Kotlin.name, icon: LanguageIcons.Kotlin.icon },
+      { name: LanguageIcons.Swift.name, icon: LanguageIcons.Swift.icon },
+      { name: FrameworkIcons.SpringBoot.name, icon: FrameworkIcons.SpringBoot.icon },
+      { name: LanguageIcons.Java.name, icon: LanguageIcons.Java.icon },
+      { name: FrameworkIcons.Angular.name, icon: FrameworkIcons.Angular.icon },
+      { name: ToolIcons.Kotest.name, icon: ToolIcons.Kotest.icon },
+      { name: ToolIcons.QuickNimble.name, icon: ToolIcons.QuickNimble.icon },
+      { name: ToolIcons.Postman.name, icon: ToolIcons.Postman.icon }
     ]
   }
 ];
@@ -194,14 +279,26 @@ export const PortfolioProjects: PortfolioItemProps[] = [{
   projectName: "Pokedex iOS",
   features: pokedexiOSFeatures,
   programmingLanguages: [
-    { name: "Swift/SwiftUI", icon: IconsHelper.Swift }
+    { name: "Swift/SwiftUI", icon: LanguageIcons.Swift.icon }
   ]
 },
 {
   projectName: "Pokedex Android",
   features: pokedexAndroidFeatures,
   programmingLanguages: [
-    { name: "Kotlin/Jetpack Compose", icon: IconsHelper.Kotlin }
+    { name: "Kotlin/Jetpack Compose", icon: LanguageIcons.Kotlin.icon }
   ]
 }
 ]
+
+// export const techStack: ProgrammingLanguage[] = Object.values(LanguageIcons)
+//   .filter(({ category }) =>
+//     category === TechCategory.Language || category === TechCategory.Framework
+//   )
+//   .map(({ name, icon }) => ({ name, icon }));
+
+// export const techTools: ProgrammingLanguage[] = Object.values(LanguageIcons)
+//   .filter(({ category }) =>
+//     category === TechCategory.Tool
+//   )
+//   .map(({ name, icon }) => ({ name, icon }));
