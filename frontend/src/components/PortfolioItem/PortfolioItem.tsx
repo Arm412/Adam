@@ -1,5 +1,6 @@
 import React from "react";
 import { PortfolioItemProps } from "../../helpers/helpers";
+import IconListItem from "../IconListItem/IconListItem";
 
 type PortfolioFeature = {
   title: string;
@@ -82,8 +83,7 @@ export default function PortfolioItem({
           <ul className="list-disc list-inside space-y-1 text-textMain">
             {programmingLanguages.map((lang, idx) => (
               <li key={idx} className="flex items-center space-x-2">
-                <img src={lang.icon} alt={lang.name} className="w-6 h-6" />
-                <span>{lang.name}</span>
+                <IconListItem icon={lang.icon} name={lang.name} key={idx} />
               </li>
             ))}
           </ul>

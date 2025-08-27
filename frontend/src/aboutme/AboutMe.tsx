@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import WorkExperienceItem from "../components/WorkExperienceItem/WorkExperienceItem";
-import { jobExperiences, AboutMeNavLocations, PortfolioProjects, techStack } from "../helpers/helpers";
+import { jobExperiences, AboutMeNavLocations, PortfolioProjects, LanguageIcons, ToolIcons, FrameworkIcons } from "../helpers/helpers";
 import PortfolioItem from "../components/PortfolioItem/PortfolioItem";
 import SideMenu from "../components/SideMenu/SideMenu";
+import IconListItem from "../components/IconListItem/IconListItem";
 
 const AboutMe: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -114,16 +115,24 @@ const AboutMe: React.FC = () => {
         {/* Skills Section */}
         <section id="workExperience" className="flex flex-col md:flex-row items-center gap-8 py-6 w-full mx-auto mb-20">
           <div className="bg-cardBg p-6 border-y border-secondary shadow-lg overflow-hidden w-full">
-            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Tech Skills</h2>
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono">Languages</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {techStack.map((tech, index) => (
-                <React.Fragment key={index}>
-                  {index > 0}
-                  <div className="flex items-center gap-4 mb-4">
-                    <img src={tech.icon} alt={tech.name} className="w-8 h-8" />
-                    <span className="text-lg text-textMain font-mono">{tech.name}</span>
-                  </div>
-                </React.Fragment>
+              {Object.entries(LanguageIcons).map(([key, language]) => (
+                <IconListItem icon={language.icon} name={language.name} key={key} />
+              ))}
+            </div>
+
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono mt-10">Tools and Testing</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {Object.entries(ToolIcons).map(([key, tool]) => (
+                <IconListItem icon={tool.icon} name={tool.name} key={key} />
+              ))}
+            </div>
+
+            <h2 className="text-secondary text-3xl font-bold pb-6 font-mono mt-10">Frameworks</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {Object.entries(FrameworkIcons).map(([key, framework]) => (
+                <IconListItem icon={framework.icon} name={framework.name} key={key} />
               ))}
             </div>
           </div>
